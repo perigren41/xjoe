@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&display=swap');
+
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #F9F7F7;
+  color: #112D4E;
+}
+
+/* Navbar */
+header {
+  display: flex;
+  background-color: #F9F7F7;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.goodjob-main-logo{
+  width: 50px;
+  cursor: pointer;
+}
+
+.div-middle-section{
+  flex:1;
+}
+
+.language-icon{
+  width: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.div-right-section{
+  display: flex;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #112D4E;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-top,
+.hero-recent-bookings {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Align items to left and right */
+    align-items: center;
+    flex: 1;
+}
+
+.hero-top {
+  margin-bottom: 1%;
+}
+
+.hero-profile{
+  display: flex;
+  position: relative;
+  width: 100%;
+  justify-content: flex-end;
+  margin-left: 20%;
+}
+
+.hero-profile img{
+  width: 125%;
+}
+
+.profile-picture{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 37%;
+  transform: translate(-50%, -50%);
+  width: 123%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-image{
+  width: 50%;
+}
+
+.profile-picture img{
+  position: relative;
+  width: 80%;
+  left: 15%;
+  top: 10%;
+}
+
+.profile-description{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  color: #F9F7F7;
+}
+
+.profile-description h1{
+  position: relative;
+  top:20%;
+}
+.stars{
+  position: relative;
+  top:15%;
+  left: 1%;
+  width: 50%;
+  height: 30%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.stars img{
+  position: relative;
+  flex-direction: row;
+  top: 45%;
+  left: 2.5%;     
+  transform: translate(-50%, -50%);
+  width: 11%;
+  height: 40%;
+  size: 15%;
+  object-fit: fill;
+  object-position: center;
+}
+
+.profile-button{
+  display: flex;
+  flex-direction: row;
+  width: 23%;
+  height: 12%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.profile-icon{
+  display: flex;
+  width: 25%;
+  margin-bottom: 5%;
+}
+
+.logout-button{
+  display: flex;
+  flex-direction: row;
+  width: 15%;
+  height: 10%;
+  justify-content: left;
+  align-items:start;
+  cursor: pointer;
+}
+
+.logout-icon{
+  display: flex;
+  width:35%;
+}
+
+.top-gap{
+  width: 5%;
+}
+
+.hero-details{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.hero-details img{
+  width: 17vw;
+  border-radius: 18%;
+}
+
+/* Recent bookings */
+
+.hero-recent-bookings{
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-recent-bookings img{
+  width: 80%;
+}
+
+.hero-bottom{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.hero-recent-bookings{ 
+  width: 100%;
+}
+.hero-recent-bookings-layer{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 80%;
+  left: 50%;
+  top: 50%;
+  font-size: 30px;
+  color:#F9F7F7;
+  font-weight:600;
+}
+
+.hero-recent-bookings-layer p{
+  margin-bottom: 2%;
+}
+
+.hero-recent-bookings-middle{
+  display: flex;
+  width: 100%;
+}
+
+.hero-recent-bookings-middle img{
+  width: 40%;
+  margin-left: 5%;
+}
+
+.hero-recent-bookings-last{
+  width: 40%;
+  margin-left: 5%;
+  margin-top: 2%;
+}
+
+.view-more-button{
+  position: relative;
+  left: 75%;
+  width: 25%;
+  height: 40%;
+  cursor: pointer;
+}
+  
