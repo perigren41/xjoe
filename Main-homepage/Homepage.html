@@ -9,18 +9,16 @@
 </head>
 <body>
     <!-- Navbar -->
-    <header>
+    <header id="header">
         <div class="div-left-section">
             <img class="goodjob-main-logo" src="\GoodJob\Images\gudjab icon (2) 1.png">
         </div>
         <div class="div-middle-section">
             <nav>
                 <ul>
-                    <li><a href="#">Homepage</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Signup</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a class="login-btn" href="#">Login</a></li>
+                    <li><a href="#about-us1">About Us</a></li>
+                    <li><a href="#contact-us">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,24 +28,44 @@
         </div>
     </header>
 
+    <!-- LOGIN FORM -->
+    <div id="login-form" class="main-container">
+        <div class="container1">
+            <H1>LOG IN TO YOUR ACCOUNT</H1>
+        </div>
+        <div class="container2">
+            <p>Username:</p>
+            <input type="text" id="username">
+            <p>Password:</p>
+            <input type="password" id="password">
+        </div>
+        <div class="container3">
+            <button id="login-button">LOGIN</button>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-main-box">
             <img class="hero-background" src="\GoodJob\Images\main element.png" alt="background image">
         </div>
+        <div id="back-to-top" class="back-to-top">
+            <p>Back to top</p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-320h80v-168l64 64 56-56-160-160-160 160 56 56 64-64v168Zm40 240q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+        </div>
     <!-- review section -->
         <div id="review" class="review-section">
-            <img class="review-section1" src="\GoodJob\Images\review-section\jom review.png" alt="">
-            <img class="review-section2" src="\GoodJob\Images\review-section\j review.png" alt="">
-            <img class="review-section3" src="\GoodJob\Images\review-section\phl review.png" alt="">
+            <img class="review-section1" src="\GoodJob\Images\review-section\jom review.png" alt="Jomar Review" onclick="reviewFunction('jom')">
+            <img class="review-section2" src="\GoodJob\Images\review-section\j review.png" alt="J Review" onclick="reviewFunction('j')">
+            <img class="review-section3" src="\GoodJob\Images\review-section\phl review.png" alt="Phil Review" onclick="reviewFunction('phl')">
         </div>
         <div class="review-content">
             <div class="review-content-name">
-                <h1>Jomar P.</h1>
-                <h2>Good Job Client for 4 months</h2>
+                <h1 id="review-name" class="fade-in">Jomar P.</h1>
+                <h2 id="review-description" class="fade-in">Good Job Client for 4 months</h2>
             </div>
-            <div class="review-content-description">
-            <p>"This app is amazing! It's so user-friendly and has everything I need. Highly recommend!"</p>
+            <div class="review-content-description" >
+            <p id="review-paragraph" class="fade-in">"This app is amazing! It's so user-friendly and has everything I need. Highly recommend!"</p>
             </div>
         </div>
     <!-- about us section-->
@@ -55,7 +73,7 @@
             <div class="div"></div>
             <div class="group-circle-image">
                 <div class="div-circle-image1">
-                    <img src="\GoodJob\Images\circle-image-abtus-section\circle-image1.png" alt="circle-image1" class="class-circle-image1">
+                    <img id="about-us1" src="\GoodJob\Images\circle-image-abtus-section\circle-image1.png" alt="circle-image1" class="class-circle-image1">
                 </div>
                 <div class="div-circle-image2">
                     <img src="\GoodJob\Images\circle-image-abtus-section\circle-image2.png" alt="circle-image2" class="class-circle-image2">
@@ -85,7 +103,7 @@
             <div class="footer-content">
                 <div class="footer-title">
                     <div class="footer-title-left">
-                        <div class="footer-text"><h1>Good Job</h1>
+                        <div id="contact-us" class="footer-text"><h1>Good Job</h1>
                             <img src="\GoodJob\Images\footer-imgs\gudjab icon (1) 1.png" alt="good job logo">
                             
                         </div>
@@ -131,26 +149,125 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="social-media">
-                    <p>Have some Feedback? Contact us below!</p>
-                    <a href="#"><img src="twitter.png" alt="Twitter"></a> <!-- Social Media Icons
-                    <a href="#"><img src="facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="instagram.png" alt="Instagram"></a>
-                </div>
-                <div class="contact-info">
-                    <p>Email: support@goodjob.com</p>
-                    <p>Phone: (555) 555-5555</p>
-                </div>
-                <div class="download-app">
-                    <p>Download our app:</p>
-                    <a href="#"><img src="google-play.png" alt="Google Play"></a>
-                    <a href="#"><img src="app-store.png" alt="App Store"></a>
-                </div>
-                -->
             </div>
         </div>
 </section>
         </div>
-    <script src="script.js"></script>
-</body>
+    <script>
+        // Get the button and the header element
+        const backToTopButton = document.getElementById('back-to-top');
+        const header = document.getElementById('header');
+
+        // Add a click event listener to the button
+        backToTopButton.addEventListener('click', function () {
+            // Scroll to the header with smooth behavior
+            header.scrollIntoView({ behavior: 'smooth' });
+        });
+  
+
+        function reviewFunction(reviewType){
+            const descriptionElement = document.querySelector("#review-description");
+            const paragraphElement = document.querySelector("#review-paragraph");
+            const nameElement = document.querySelector("#review-name");
+
+            // Reset the "selected" class on all images
+            const images = document.querySelectorAll("#review img");
+            images.forEach((img) => img.classList.remove("selected"));
+
+            // Add the "selected" class to the clicked image
+            const clickedImage = document.querySelector(
+                `.review-section${reviewType === "jom" ? "1" : reviewType === "j" ? "2" : "3"}`
+            );
+            clickedImage.classList.add("selected");
+
+            
+            nameElement.classList.remove("fade-in");
+            descriptionElement.classList.remove("fade-in");
+            paragraphElement.classList.remove("fade-in");
+
+            nameElement.classList.add("fade-out");
+            descriptionElement.classList.add("fade-out");
+            paragraphElement.classList.add("fade-out");
+
+            setTimeout(() => {
+            // Update content dynamically based on the clicked image
+            if (reviewType === "jom") {
+            nameElement.innerHTML = "Jomar P.";
+            descriptionElement.innerHTML = "Good Job Client for 4 months";
+            paragraphElement.innerHTML =
+                '"This app is amazing! It\'s so user-friendly and has everything I need. Highly recommend!"';
+            } else if (reviewType === "j") {
+            nameElement.innerHTML = "Allen Josh.";
+            descriptionElement.innerHTML = "Good Job Client for 1 year";
+            paragraphElement.innerHTML =
+                '"This service saved me so much time and effort. Will keep using it!"';
+            } else if (reviewType === "phl") {
+            nameElement.innerHTML = "Phil L.";
+            descriptionElement.innerHTML = "Good Job Client for 2 weeks";
+            paragraphElement.innerHTML =
+                '"A reliable service I can trust. Great for anyone who needs quick help!"';
+            }
+
+            // Remove fade-out and add fade-in for updated content
+            nameElement.classList.remove("fade-out");
+            descriptionElement.classList.remove("fade-out");
+            paragraphElement.classList.remove("fade-out");
+
+
+            nameElement.classList.add("fade-in");
+            descriptionElement.classList.add("fade-in");
+            paragraphElement.classList.add("fade-in");
+            }, 500); // Matches the CSS transition duration
+        }
+
+
+        const loginBtn = document.querySelector('.login-btn');
+        const loginForm = document.getElementById('login-form');
+
+        loginForm.style.display = 'none';
+    
+        // Toggle login form visibility when the login button is clicked
+        loginBtn.addEventListener('click', (event) => {
+        // Prevent the click event from bubbling up to the document
+        event.stopPropagation();
+        
+        // Toggle the display of the login form
+        if (loginForm.style.display === 'none' || loginForm.style.display === '') {
+            loginForm.style.display = 'flex';
+        } else {
+            loginForm.style.display = 'none';
+        }
+        });
+
+        // Close the login form if clicked outside of it
+        document.addEventListener('click', (event) => {
+        // Check if the click is outside the login form and button
+        if (!loginForm.contains(event.target) && !loginBtn.contains(event.target)) {
+            loginForm.style.display = 'none'; // Hide the login form
+        }
+        });
+
+        function handleLogin() {
+            // Get the username and password input values
+            const usernameInput = document.querySelector("#username");
+            const passwordInput = document.querySelector("#password");
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            // Check if the credentials match
+            if (username === "spAdmin" && password === "spAdmin") {
+                // Redirect to the service provider homepage
+                window.location.href = "/GoodJob/client-and-sp-side/sp-side.html";
+            } else if (username === "clientAdmin" && password === "clientAdmin"){
+                window.location.href = "/GoodJob/client-and-sp-side/client-side.html";
+            }
+            else {
+                // Show an error message
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+
+        document.querySelector("#login-button").addEventListener("click", handleLogin);
+    </script>
+    </body>
 </html>

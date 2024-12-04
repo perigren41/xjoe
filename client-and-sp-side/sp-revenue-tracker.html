@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sp-revenue-tracker.css">
+    <title>Revenue Tracker</title>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+  <header>
+    <div id="home-link" class="div-left-section">
+        <img  class="goodjob-main-logo" src="\GoodJob\Images\gudjab icon (2) 1.png">
+        <p> Good Job!</p>
+    </div>
+    <div class="div-middle-section">
+        <nav>
+            <ul>
+                <li><a id="home" href="#">Home</a></li>
+                <li><a id="booking-history" href="#">Booking History</a></li>
+                <li><a id="revenue-tracker" href="#">Revenue Tracker</a></li>
+                <li><a id="account-settings" href="#">Account Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="div-right-section">
+      <img class="language-icon" src="\GoodJob\Images\language-icon.png" alt="language icon">
+      <p>EN</p>
+    </div>
+  </header>
+
+    <div class="main-containter">
+      <div class="inner-left-container">
+        <div class="inner-left-top-container">
+          <p>All-time Total Revenue</p>
+          <h1 style="text-shadow: 3px 3px rgba(0, 0, 0, 0.4);">PHP 10,000.00</h1>
+        </div>
+        <div class="inner-left-bottom-container">
+          <div class="inner-left-bottom-left-container">
+            <p>Clients</p>
+            <h1 style="text-shadow: 3px 3px rgba(0, 0, 0, 0.4);">17</h1>
+          </div>
+          <div class="inner-left-bottom-right-container">
+            <p>Bookings</p>
+            <h1 style="text-shadow: 3px 3px rgba(0, 0, 0, 0.4);">52</h1>
+          </div>
+        </div>
+      </div>
+      <div class="inner-right-container">
+        <div class="inner-right-top-container">
+          <div class="recent-client-bookings">
+            <h1>Recent Client Bookings</h1>
+          </div>
+          <div class="client-info-container">
+            <div class="client-bookings-info">
+              <div class="client-info-row">
+              <img src="\GoodJob\Images\client-revenue-tracker\1.png" alt="">
+              <p>Maria Winter Isabella Cruz
+              <span>PHP 500.00</span></p>
+              </div>
+
+              <div class="client-info-row">
+              <img src="\GoodJob\Images\client-revenue-tracker\2.png" alt="">
+              <p>Joanne Ryujin Carpio
+              <span>PHP 700.00</span></p>
+              </div>
+
+              <div class="client-info-row">
+              <img src="\GoodJob\Images\client-revenue-tracker\3.png" alt="">
+              <p>Lucy Yeji May Santos
+              <span>PHP 500.00</span></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="inner-right-bottom-container">
+          <h1>Most of your clients are from:</h1>
+          <p>Ususan, Taguig</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    document.getElementById("home-link").addEventListener("click", function(event) {
+      event.preventDefault();
+      window.location.href = "sp-side.html";
+    });
+
+    document.getElementById("home").addEventListener("click", function(event) {
+      event.preventDefault();
+      window.location.href = "sp-side.html";
+    });
+
+    document.getElementById("booking-history").addEventListener("click", function(event) {
+      event.preventDefault();
+      window.location.href = "sp-booking-history.html";
+    });
+
+    document.getElementById("revenue-tracker").addEventListener("click", function(event) {
+      event.preventDefault();
+      window.location.href = "sp-revenue-tracker.html";
+    });
+
+    document.getElementById("account-settings").addEventListener("click", function(event) {
+      event.preventDefault();
+      window.location.href = "sp-acc-settings.html";
+    });
+
+    </script>
+  </body>
+</html>

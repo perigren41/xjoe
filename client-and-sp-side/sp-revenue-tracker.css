@@ -1,0 +1,232 @@
+/* Font style */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #F9F7F7;
+  color: #112D4E;
+}
+
+ /* Navbar */
+header {
+  display: flex;
+  background-color: #F9F7F7;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.div-left-section{
+  display: flex;
+  align-items: center;
+  color: #3F72AF;
+  gap: 1rem;
+}
+
+.div-left-section p{
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.goodjob-main-logo{
+  width: 50px;
+  cursor: pointer;
+}
+
+.div-middle-section{
+  flex:1;
+}
+
+.language-icon{
+  width: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.div-right-section{
+  display: flex;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #112D4E;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+
+
+/* Main container */
+
+
+.main-containter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  gap: 5%;
+  align-items: stretch; 
+
+}
+
+
+/* left container */
+
+.inner-left-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1; /* Allows it to stretch */
+  color: #F9F7F7;
+}
+
+/* left top */
+
+.inner-left-top-container{
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-position: center;
+}
+
+.inner-left-container h1{
+  font-size: 300%;
+}
+
+.inner-left-container p{
+  font-weight: 300;
+}
+
+.inner-left-top-container img{
+  position: absolute;
+}
+
+/* left bottom */
+
+.inner-left-bottom-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.inner-left-bottom-left-container{
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  height: 31.3vh;
+  width: 25vw;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.inner-left-bottom-right-container{
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  height: 31.3vh;
+  width: 25vw;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* right container */
+
+/* right top */
+
+.inner-right-top-container{
+  padding: 5%;
+  width: 40vw;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color:#F9F7F7
+}
+
+.inner-right-top-container h1{
+  font-size: 150%;
+  padding: 2%;
+}
+
+.client-info-container {
+  display: flex;
+  gap: 1rem; /* Adds spacing between image and text block */
+}
+
+.client-bookings-pfp {
+  display: flex;
+}
+
+.client-bookings-pfp img {
+  width: 50%;
+  height: 50%;
+}
+
+.client-info-row {
+  display: flex;
+  align-items: center; /* Center aligns image and text */
+}
+
+.client-bookings-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Ensures even spacing between rows */
+  flex-grow: 1; /* Ensures this section grows to fill remaining space */
+}
+
+.client-bookings-info p {
+  display: flex;
+  margin-left: 10%;
+  flex-grow: 1; /* Ensures this section grows to fill remaining space */
+}
+
+.client-bookings-info span {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: auto; /* Pushes the span to the far right */
+}
+/* right bottom */
+
+.inner-right-bottom-container{
+  border-radius: 1rem;
+  padding: 9%;
+  border-radius: 1rem;
+  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  color:#F9F7F7
+}

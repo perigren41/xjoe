@@ -3,22 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="client-side.css">
     <title>Home</title>
   </head>
   <body>
     <!-- Navbar -->
     <header>
-      <div class="div-left-section">
+      <div id="home-link" class="div-left-section">
           <img class="goodjob-main-logo" src="\GoodJob\Images\gudjab icon (2) 1.png">
           <p>Good Job!</p>
       </div>
       <div class="div-middle-section">
           <nav>
               <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Booking History</a></li>
+                  <li><a id="home" href="#">Home</a></li>
+                  <li><a id="booking-history" href="#">Booking History</a></li>
+                  <li><a id="account-settings" href="#">Account Settings</a></li>
               </ul>
           </nav>
       </div>
@@ -52,9 +52,9 @@
                       <p>Go to profile</p>
                       <div class="profile-icon"><img src="\GoodJob\Images\client-side\account_circle.png" alt="account circle"></div>
                     </div>
-                    <div class="logout-button">
+                    <div id="logout" class="logout-button">
                       <p>Logout </p>
-                      <div class="logout-icon"><img src="\GoodJob\Images\client-side\logout.png" alt="logout icon"></div>
+                      <div  class="logout-icon"><img src="\GoodJob\Images\client-side\logout.png" alt="logout icon"></div>
                     </div>
                   </div>
                 </div>
@@ -87,7 +87,33 @@
               </div>
             </div>
           </div>
-          
         </div>
+
+        <script>
+          document.getElementById("home-link").addEventListener("click", function(event) {
+            event.preventDefault();
+            window.location.href = "client-side.html"; 1 
+          });
+
+          document.getElementById("logout").addEventListener("click", function(event) {
+            event.preventDefault();
+            window.location.href = "/GoodJob/Main-homepage/Homepage.html"; 1 
+          });
+      
+          document.getElementById("home").addEventListener("click", function(event) {
+            event.preventDefault();
+            window.location.href = "client-side.html"; 1 
+          });
+    
+          document.getElementById("booking-history").addEventListener("click", function(event) {
+            event.preventDefault();
+            window.location.href = "client-booking-history.html"; 1 
+          });
+    
+          document.getElementById("account-settings").addEventListener("click", function(event) {
+            event.preventDefault();
+            window.location.href = "client-acc-settings.html"; 1
+          });
+          </script>
   </body>
 </html>

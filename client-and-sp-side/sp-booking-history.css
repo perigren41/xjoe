@@ -1,0 +1,146 @@
+/* Font style */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #F9F7F7;
+  color: #112D4E;
+}
+
+ /* Navbar */
+header {
+  display: flex;
+  background-color: #F9F7F7;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.div-left-section{
+  display: flex;
+  align-items: center;
+  color: #3F72AF;
+  gap: 1rem;
+}
+
+.div-left-section p{
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.goodjob-main-logo{
+  width: 50px;
+  cursor: pointer;
+}
+
+.div-middle-section{
+  flex:1;
+}
+
+.language-icon{
+  width: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.div-right-section{
+  display: flex;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #112D4E;
+  font-weight: 400;
+  text-decoration: none;
+}
+/* Table Container */
+.table-container {
+  display: flex;
+  background: #F9F7F7;
+  padding: 1.5rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow-x: auto;
+  overflow-y: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  outline: 2px solid #112D4E;
+  border-collapse: collapse;
+  border-radius: 2rem;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+thead tr {
+  background: linear-gradient(180deg, #3F72AF, #112D4E);
+  color: rgb(236, 232, 232);
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+}
+
+thead th {
+  padding: 1rem;
+}
+
+tbody tr {
+  background-color: #DBE2EE;
+}
+
+
+/* Odd rows (1st, 3rd, etc.) */
+tbody tr:nth-child(even) {
+  background-color: #f4f4f4; /* Lighter color */
+}
+
+td {
+  padding: 1.5rem;
+  vertical-align: middle;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Profile Image */
+td img {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+.td-name{
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.td-name p{
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Stars */
+.stars {
+  color: gold;
+  font-size: 1.2rem;
+}

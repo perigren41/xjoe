@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
 
 /* Global Styles */
 * {
@@ -23,6 +26,7 @@ header {
   justify-content: center;
   text-align: center;
 }
+
 .goodjob-main-logo{
   width: 50px;
   cursor: pointer;
@@ -59,6 +63,86 @@ nav ul li a {
   text-decoration: none;
 }
 
+
+/* LOGIN FORM  */
+
+.main-container{
+  position: fixed;
+  left: 35%;
+  display: flex;
+  width: 35vw;
+  height: 80vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  background-image: url("/GoodJob/Images/about-us-section/bg.png");
+  background-position:center;
+  background-size: cover;
+  border-radius: 10%;
+  box-shadow: 1px 1px 8px 4px rgba(17, 45, 78, 0.473);
+
+}
+
+.container1 h1{
+  color: #F9F7F7;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.container2{
+  padding: 10%;
+  color: #F9F7F7;
+  font-weight: 200;
+  width: 20vw;
+}
+
+input{
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border:none;
+  border-radius: 15px;
+  border-bottom: 1px solid #112d4e;
+}
+
+input:focus{
+  border-bottom: 3px solid #112d4e;
+}
+
+.container3{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container3 button{
+  width: 60%;
+  color:#112D4E;
+  font-size: 125%;
+  border-radius: 25px;
+  border: none;
+  padding: 15px;
+  width: 12vw;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.container3 p{
+  color: #F9F7F7;
+  font-weight: 200;
+}
+
+.container3 span{
+  font-weight: 500;
+}
+
 /* Hero Section */
 #hero {
   color: #fff;
@@ -66,6 +150,27 @@ nav ul li a {
   display: grid;
   grid-template-rows: auto 1fr auto; /* One row for header, one for hero */
   max-height: 100vh;
+}
+
+.back-to-top{
+  position: fixed;
+  display: flex;
+  bottom: 50px;
+  right: 40px;
+  width: 150px;
+  color:#F9F7F7;
+  border-radius: 50px;
+  border: 1px solid #F9F7F7;
+  background-color: #112D4E;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 5px;
+}
+
+.back-to-top p{
+  margin-right: 6px;
 }
 
 /* Main Hero Container */
@@ -108,6 +213,27 @@ nav ul li a {
   box-shadow: 0px 0px 10px rgba(17, 45, 78, 0.3);
   border: 1px solid rgb(17, 45, 78);
   border-radius: 80%;
+}
+
+#review img.selected{
+  transform: scale(1.09);
+  box-shadow: 0px 0px 10px rgba(17, 45, 78, 0.3);
+  border: 1px solid rgb(17, 45, 78);
+  border-radius: 80%;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.hidden {
+  display: none;
 }
 
 .review-content{

@@ -23,6 +23,19 @@ header {
   justify-content: center;
   text-align: center;
 }
+
+.div-left-section{
+  display: flex;
+  align-items: center;
+  color: #3F72AF;
+  gap: 1rem;
+}
+
+.div-left-section p{
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .goodjob-main-logo{
   width: 50px;
   cursor: pointer;
