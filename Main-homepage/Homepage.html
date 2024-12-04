@@ -37,7 +37,7 @@
             <p>Username:</p>
             <input type="text" id="username">
             <p>Password:</p>
-            <input type="password" id="password">
+            <input type="password" id="password" onkeydown=EnterShortcutElement(event)>
         </div>
         <div class="container3">
             <button id="login-button">LOGIN</button>
@@ -267,6 +267,11 @@
             }
         }
 
+        function EnterShortcutElement(event){
+            if(event.key === 'Enter'){
+                handleLogin();
+            }
+        }
         document.querySelector("#login-button").addEventListener("click", handleLogin);
     </script>
     </body>
