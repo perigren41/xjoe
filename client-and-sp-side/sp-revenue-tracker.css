@@ -84,7 +84,7 @@ nav ul li a {
   margin-left: 10%;
   margin-right: 10%;
   gap: 5%;
-  align-items: stretch; 
+  align-items: stretch;
 
 }
 
@@ -108,9 +108,18 @@ nav ul li a {
   height: 50%;
   justify-content: center;
   align-items: center;
-  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-image: url('/Images/about-us-section/bg.png');
   background-position: center;
 }
+
+
+.inner-left-top-container:hover{
+  cursor: pointer;
+  box-shadow: 1px 1px 3px 4px #112D4E;
+  border-radius: 1rem;
+}
+
+
 
 .inner-left-container h1{
   font-size: 300%;
@@ -133,6 +142,7 @@ nav ul li a {
   gap: 1rem;
 }
 
+
 .inner-left-bottom-left-container{
   display: flex;
   flex-direction: column;
@@ -141,7 +151,7 @@ nav ul li a {
   width: 25vw;
   align-items: center;
   justify-content: center;
-  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-image: url('/Images/about-us-section/bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -155,13 +165,12 @@ nav ul li a {
   width: 25vw;
   align-items: center;
   justify-content: center;
-  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-image: url('/Images/about-us-section/bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* right container */
 
 /* right top */
 
@@ -170,7 +179,7 @@ nav ul li a {
   width: 40vw;
   border-radius: 1rem;
   margin-bottom: 1rem;
-  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-image: url('/Images/about-us-section/bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -225,8 +234,56 @@ nav ul li a {
   border-radius: 1rem;
   padding: 9%;
   border-radius: 1rem;
-  background-image: url('/GoodJob/Images/about-us-section/bg.png');
+  background-image: url('/Images/about-us-section/bg.png');
   background-position: center;
   background-repeat: no-repeat;
   color:#F9F7F7
+}
+
+/* data information container */
+
+/* Data form */
+.data-information-form{
+  display: flex;
+  flex-direction: column;
+  position:fixed;
+  background-color: #F9F7F7;
+  top:33%;
+  border-radius: 1rem;
+  border: 1px solid rgb(48, 46, 46);
+
+}
+
+/* Line graph */
+
+
+path {
+  fill: rgba(47, 165, 203, 0.1);
+  stroke-width: 2.5;
+  stroke: rgb(47, 164, 203);
+}
+
+g#graph-points circle {
+  fill: rgba(33, 165, 175, 1);
+}
+
+g#graph-lines line {
+  stroke: rgb(188, 198, 223);
+  stroke-width: 1;
+}
+
+g#graph-texts text {
+  font-size: 12px;
+  fill: black;
+}
+
+#card {
+  position: absolute;
+  background: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+  display: none;
+  pointer-events: none;
+  font-size: 12px;
 }

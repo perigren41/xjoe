@@ -11,7 +11,7 @@
     <!-- Navbar -->
   <header>
     <div id="home-link" class="div-left-section">
-        <img  class="goodjob-main-logo" src="\GoodJob\Images\gudjab icon (2) 1.png">
+        <img  class="goodjob-main-logo" src="\Images\gudjab icon (2) 1.png">
         <p> Good Job!</p>
     </div>
     <div class="div-middle-section">
@@ -25,14 +25,14 @@
         </nav>
     </div>
     <div class="div-right-section">
-      <img class="language-icon" src="\GoodJob\Images\language-icon.png" alt="language icon">
+      <img class="language-icon" src="\Images\language-icon.png" alt="language icon">
       <p>EN</p>
     </div>
   </header>
 
     <div class="main-containter">
       <div class="inner-left-container">
-        <div class="inner-left-top-container">
+        <div class="inner-left-top-container" id="inner-left-top-container">
           <p>All-time Total Revenue</p>
           <h1 style="text-shadow: 3px 3px rgba(0, 0, 0, 0.4);">PHP 10,000.00</h1>
         </div>
@@ -41,12 +41,18 @@
             <p>Clients</p>
             <h1 style="text-shadow: 3px 3px rgba(0, 0, 0, 0.4);">17</h1>
           </div>
-          <div class="inner-left-bottom-right-container">
-            <p>Bookings</p>
-            <h1 style="text-shadow: 3px 3px rgba(0, 0, 0, 0.4);">52</h1>
-          </div>
+          <div id="inner-left-bottom-right-container" class="inner-left-bottom-right-container">
+          <p>Bookings</p>
+          <h1 style="text-shadow: 3px 3px rgba(0, 0, 0, 0.4);">0</h1>
+        </div>
         </div>
       </div>
+
+      
+        <!-- Data/Line graph -->
+        <div class="data-information-form" id="svg-path"><div id="card"></div></div>
+
+
       <div class="inner-right-container">
         <div class="inner-right-top-container">
           <div class="recent-client-bookings">
@@ -55,23 +61,22 @@
           <div class="client-info-container">
             <div class="client-bookings-info">
               <div class="client-info-row">
-              <img src="\GoodJob\Images\client-revenue-tracker\1.png" alt="">
+              <img src="\Images\client-revenue-tracker\1.png" alt="">
               <p>Maria Winter Isabella Cruz
-              <span>PHP 500.00</span></p>
+              <span>PHP 423.00</span></p>
               </div>
 
               <div class="client-info-row">
-              <img src="\GoodJob\Images\client-revenue-tracker\2.png" alt="">
+              <img src="\Images\client-revenue-tracker\2.png" alt="">
               <p>Joanne Ryujin Carpio
-              <span>PHP 700.00</span></p>
+              <span>PHP 474.00</span></p>
               </div>
 
               <div class="client-info-row">
-              <img src="\GoodJob\Images\client-revenue-tracker\3.png" alt="">
+              <img src="\Images\client-revenue-tracker\3.png" alt="">
               <p>Lucy Yeji May Santos
-              <span>PHP 500.00</span></p>
+              <span>PHP 336.00</span></p>
               </div>
-
             </div>
           </div>
         </div>
@@ -85,12 +90,12 @@
     <script>
     document.getElementById("home-link").addEventListener("click", function(event) {
       event.preventDefault();
-      window.location.href = "sp-side.html";
+      window.location.href = "sp-side-homepage.html";
     });
 
     document.getElementById("home").addEventListener("click", function(event) {
       event.preventDefault();
-      window.location.href = "sp-side.html";
+      window.location.href = "sp-side-homepage.html";
     });
 
     document.getElementById("booking-history").addEventListener("click", function(event) {
@@ -107,6 +112,210 @@
       event.preventDefault();
       window.location.href = "sp-acc-settings.html";
     });
+
+    
+    const svgPathParent = document.getElementById("svg-path");
+    const card = document.getElementById("card");
+
+    const dataPath2 = [860, 1200, 593, 366, 542, 974, 463, 222, 475, 934, 593, 589, 120, 192, 240, 312, 360, 196, 276, 200, 120, 180, 152, 273, 156, 442, 336, 474, 423];
+    
+    
+    function dataVisualization(array, frequency, linecount) {
+  const svgElment = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  const svgPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+  // Normalize the data to a maximum of 5
+  const maxServices = 5;
+  const normalizedArray = array.map(val => Math.round((val / Math.max(...array)) * maxServices));
+  const days = normalizedArray.length;
+  const widthSvg = days * frequency;
+  const heightSvg = 300; // Fixed height for consistency
+  const graphLine = heightSvg / linecount;
+
+// Padding for centering
+  const padding = 50;
+  const totalWidth = widthSvg + padding * 1;
+  const totalHeight = heightSvg + padding * 1;
+
+  // Set SVG attributes
+  svgElment.setAttributeNS(null, "width", totalWidth); // Total width including padding
+  svgElment.setAttributeNS(null, "height", totalHeight); // Total height including padding
+  svgElment.setAttributeNS(null, "viewBox", `0 0 ${totalWidth} ${totalHeight}`); // Set viewBox to include padding
+
+
+  svgElment.setAttributeNS(null, "width", widthSvg + 50); // Add space for Y-axis labels
+  svgElment.setAttributeNS(null, "height", heightSvg + 25); // Add space for X-axis labels
+
+  // g tags for grouping other tags
+  const gElCircle = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  gElCircle.id = "graph-points";
+
+  const gElLine = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  gElLine.id = "graph-lines";
+
+  const gElText = document.createElementNS("http://www.w3.org/2000/svg", "g");
+  gElText.id = "graph-texts";
+
+  // Base line path
+  let pathString = `M${widthSvg} ${heightSvg} L60 ${heightSvg}`; // Start path after Y-axis labels
+
+  // Horizontal Axis Dates
+  for (let d = 0; d < days; d++) {
+    const yValue = heightSvg - normalizedArray[d] * (heightSvg / maxServices);
+    const xValue = d * frequency + 90; // Adjusted for Y-axis label space
+
+    // Path for the line graph
+    pathString += ` L${xValue} ${yValue}`;
+
+    // Tooltip with data (includes specific daily earnings)
+    const circleEl = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circleEl.setAttributeNS(null, "cx", xValue);
+    circleEl.setAttributeNS(null, "cy", yValue);
+    circleEl.setAttributeNS(null, "r", "5");
+
+    // Use the raw array value for daily earnings
+    const dailyEarnings = array[d];
+
+    circleEl.addEventListener("mouseover", () => {
+      const date_ = new Date(Date.now() - ((days - d) * (24 * 60 * 60 * 1000)))
+        .toISOString()
+        .split("T")[0];
+
+      card.style = `top:${yValue - 20}px; left:${xValue + 20}px; display: block;`;
+      card.innerHTML = `
+        <b>Date:</b> ${date_}<br>
+        <b>Services:</b> ${normalizedArray[d]}<br>
+        <b>Earnings:</b> PHP ${dailyEarnings.toLocaleString()}
+      `;
+    });
+    circleEl.addEventListener("mouseout", () => (card.style.display = "none"));
+    gElCircle.appendChild(circleEl);
+
+    // Horizontal axis label (Short Date)
+    if (d % 2 === 0) { // Only display dates for every other day to avoid overlap
+      const textElX = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      textElX.setAttributeNS(null, "x", xValue);
+      textElX.setAttributeNS(null, "y", heightSvg + 20);
+      textElX.textContent = new Date(Date.now() - ((days - d) * (24 * 60 * 60 * 1000)))
+        .toISOString()
+        .split("T")[0]
+        .slice(5); // Shorten to MM-DD
+      textElX.setAttributeNS(null, "font-size", "10px");
+      textElX.setAttributeNS(null, "text-anchor", "middle");
+      gElText.appendChild(textElX);
+    }
+  }
+
+  const ends = heightSvg - normalizedArray[days - 1] * (heightSvg / maxServices);
+  pathString += ` L${widthSvg} ${ends}`;
+  svgPath.setAttributeNS(null, "d", pathString);
+
+  // Vertical Lines and Texts for Y-Axis
+  for (let l = 0; l <= maxServices; l++) {
+    const yPosition = heightSvg - (l * (heightSvg / maxServices));
+
+    // Grid line
+    const lineEl = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    lineEl.setAttributeNS(null, "x1", "50"); // Start lines after Y-axis labels
+    lineEl.setAttributeNS(null, "y1", yPosition);
+    lineEl.setAttributeNS(null, "x2", widthSvg + 90);
+    lineEl.setAttributeNS(null, "y2", yPosition);
+    gElLine.appendChild(lineEl);
+
+    // Vertical Axis Label (Services Count)
+    const textElY = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    textElY.setAttributeNS(null, "x", "40");
+    textElY.setAttributeNS(null, "y", yPosition + 13);
+    textElY.textContent = l;
+    textElY.setAttributeNS(null, "font-size", "12px");
+    textElY.setAttributeNS(null, "text-anchor", "end");
+    gElText.appendChild(textElY);
+  }
+
+  svgElment.appendChild(gElCircle);
+  svgElment.appendChild(gElLine);
+  svgElment.appendChild(gElText);
+  svgElment.appendChild(svgPath);
+
+  svgPathParent.appendChild(svgElment);
+
+  // Call calculateAndDisplayAverageEarnings for overall stats
+  calculateAndDisplayAverageEarnings(array, "svg-path", "inner-left-top-container");
+
+  calculateAndDisplayTotalServices(normalizedArray, "svg-path", "inner-left-bottom-right-container");
+}
+
+
+  dataVisualization(dataPath2, 51, 5);
+
+function calculateAndDisplayTotalServices(array, containerId, innerContainerId) {
+  // Calculate the total services
+  const totalServices = array.reduce((acc, curr) => acc + curr, 0);
+
+  // Update the data-information-container
+  const container = document.getElementById(containerId);
+  let totalServicesElement = container.querySelector(".total-services"); // Look for an existing element
+  if (!totalServicesElement) {
+    // Create the element if it doesn't exist
+    totalServicesElement = document.createElement("div");
+    totalServicesElement.className = "total-services";
+    totalServicesElement.style = "display:flex; font-size: 14px; font-weight: bold; margin: 10px; color: #112D4E;";
+    container.appendChild(totalServicesElement);
+  }
+  totalServicesElement.textContent = `Your total Services: ${totalServices}`;
+
+  // Update the inner-left-bottom-right-container
+  const innerContainer = document.getElementById(innerContainerId);
+  const h1Element = innerContainer.querySelector("h1");
+  h1Element.textContent = totalServices;
+}
+
+function calculateAndDisplayAverageEarnings(array, containerId, innerContainerId) {
+  // Calculate the total earnings and average earnings per day
+  const totalEarnings = array.reduce((acc, curr) => acc + curr, 0);
+  const averageEarnings = totalEarnings / array.length;
+
+  // Update the All-time Total Revenue h1 element
+  const innerContainer = document.getElementById(innerContainerId);
+  const h1Element = innerContainer.querySelector("h1");
+  h1Element.textContent = `PHP ${totalEarnings.toLocaleString()}.00`;
+
+  // Add average earnings inside the graph
+  const container = document.getElementById(containerId);
+  let averageEarningsElement = container.querySelector(".average-earnings");
+  if (!averageEarningsElement) {
+    averageEarningsElement = document.createElement("div");
+    averageEarningsElement.className = "average-earnings";
+    averageEarningsElement.style =
+      "display:flex; font-size: 14px; font-weight: bold; margin: 10px; color: #112D4E;";
+    container.appendChild(averageEarningsElement);
+  }
+  averageEarningsElement.textContent = `Average Earnings/Day: PHP ${averageEarnings.toLocaleString()}`;
+}
+
+
+  // hide and unhide data form
+
+  const revenueBtn = document.querySelector('.inner-left-top-container');
+  const dataForm = document.getElementById('svg-path');
+
+  dataForm.style.display = 'none';
+
+  revenueBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
+
+    if (dataForm.style.display === 'none' || dataForm.style.display === ''){
+      dataForm.style.display = 'flex';
+    } else{
+      dataForm.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('click', (event) =>{
+    if (!dataForm.contains(event.target) && !revenueBtn.contains(event.target)){
+      dataForm.style.display = 'none';
+    }
+  });
 
     </script>
   </body>

@@ -9,111 +9,210 @@
   <body>
     <!-- Navbar -->
     <header>
-      <div id="home-link" class="div-left-section">
-          <img class="goodjob-main-logo" src="\GoodJob\Images\gudjab icon (2) 1.png">
-          <p>Good Job!</p>
+      <div class="div-left-section">
+          <img id="home-link-img" class="goodjob-main-logo" src="\Images\gudjab icon (2) 1.png">
+          <p id="home-link-text">Good Job!</p>
       </div>
       <div class="div-middle-section">
           <nav>
               <ul>
-                  <li><a id="home" href="#">Home</a></li>
-                  <li><a id="booking-history" href="#">Booking History</a></li>
-                  <li><a id="account-settings" href="#">Account Settings</a></li>
+                <li><a id="home-link" href="#">Home</a></li>
+                <li><a id="booking-history" href="#">Booking History</a></li>
+                <li><a id="account-settings" href="#">Account Settings</a></li>
               </ul>
           </nav>
       </div>
       <div class="div-right-section">
-        <img class="language-icon" src="\GoodJob\Images\language-icon.png" alt="language icon">
+        <img class="language-icon" src="\Images\language-icon.png" alt="language icon">
         <p>EN</p>
       </div>
     </header>
 
-      <!-- Hero section -->
-      <div class="hero-section">
-        <div class="hero">
-            <div class="hero-top">
-              <div class="hero-profile">
-                <!-- top left -->
-                <img src="\GoodJob\Images\about-us-section\bg.png" alt="background" class="profile-background">
-                <div class="profile-picture">
-                  <div class="profile-image">
-                    <img src="\GoodJob\Images\client-side\client pfp.png" alt="" srcset="">
-                  </div>
-                <div class="profile-description">
-                  <h1>Winter - Client</h1>
-                    <div class="stars">
-                      <img src="\GoodJob\Images\star-reviews\Star.png" alt="" class="star1">
-                      <img src="\GoodJob\Images\star-reviews\Star.png" alt="" class="star2">
-                      <img src="\GoodJob\Images\star-reviews\Star.png" alt="" class="star3">
-                      <img src="\GoodJob\Images\star-reviews\Star.png" alt="" class="star4">
-                      <img src="\GoodJob\Images\star-reviews\No star.png" alt="" class="star5">
-                    </div>
-                    <div class="profile-button">
-                      <p>Go to profile</p>
-                      <div class="profile-icon"><img src="\GoodJob\Images\client-side\account_circle.png" alt="account circle"></div>
-                    </div>
-                    <div id="logout" class="logout-button">
-                      <p>Logout </p>
-                      <div  class="logout-icon"><img src="\GoodJob\Images\client-side\logout.png" alt="logout icon"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-                <!--  mid gap -->
-              <div class="top-gap"></div>
-                <!-- top right -->
-              <div class="hero-details">
-                <img src="\GoodJob\Images\client-side\hero-details.webp" alt="man welding">
-              </div>
+    <div class="main-container">
+      <div class="top-container">
+        <div class="top-left-container">
+          <div class="top-left-profile-container"><img src="\Images\client-side\client pfp.png" alt="" srcset=""></div>
+          <div class="top-left-profile-description">
+            <H1>Winter - Client </H1>
+            <div class="stars">
+              <img src="\Images\star-reviews\Star.png" alt="" class="star1">
+              <img src="\Images\star-reviews\Star.png" alt="" class="star2">
+              <img src="\Images\star-reviews\Star.png" alt="" class="star3">
+              <img src="\Images\star-reviews\Star.png" alt="" class="star4">
+              <img src="\Images\star-reviews\No star.png" alt="" class="star5">
             </div>
-        </div>
-        <div class="hero">
-            <div class="hero-recent-bookings">
-              <img src="\GoodJob\Images\about-us-section\bg.png" alt="" >
-              <div class="hero-recent-bookings-layer">
-                <div class="hero-recent-bookings-top">
-                  <p>Most Recent Bookings:</p>
-                </div>
-                <div class="hero-recent-bookings-middle">
-                  <img src="\GoodJob\Images\most-recent-bookings\sp karina.png">
-                  <img src="\GoodJob\Images\most-recent-bookings\sp ningning.png">
-                </div>
-                <div class="hero-recent-bookings-last">
-                  <img src="\GoodJob\Images\most-recent-bookings\sp giselle.png">
-                </div>
-                <div class="view-more-button">
-                  <img src="\GoodJob\Images\most-recent-bookings\vm.png">
-                </div>
-              </div>
+            <div class="profile-row">
+              <p id="profile">Go to profile</p>
+              <img id="profile-img" src="\Images\client-side\account_circle.png" alt="account circle">
             </div>
+            
+            <div class="logout-row" id="logout">
+              <p>Logout</p>
+            <img src="\Images\client-side\logout.png" alt="logout icon">
+            </div>
+            
           </div>
         </div>
+        <div class="top-right-container">
+          <img src="\Images\client-side\hero-details.webp" alt="man welding"></div>
+      </div>
+      <div class="bottom-container">
+        <div class="inner-bottom-top-container">
+          <h1>Most Recent Bookings:</h1>
+        </div>
 
-        <script>
-          document.getElementById("home-link").addEventListener("click", function(event) {
-            event.preventDefault();
-            window.location.href = "client-side.html"; 1 
-          });
+        <div class="inner-bottom-bottom-container">
 
-          document.getElementById("logout").addEventListener("click", function(event) {
-            event.preventDefault();
-            window.location.href = "/GoodJob/Main-homepage/Homepage.html"; 1 
-          });
+          <div class="div">
+            <div class="inner-bottom-bottom-profile-picture">
+              <img src="\Images\client-booking-history-pfp\1.png" alt="">
+            </div>
+            <div class="inner-bottom-bottom-profile-description">
+              <div class="inner-bottom-profile-name-stars">
+                <p>Princess Karina Dela Cruz</p>
+                <div class="stars2">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star1">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star2">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star3">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star4">
+                  <img src="\Images\star-reviews\No star.png" alt="" class="star5">
+                </div>
+              </div>
+              <div class="inner-bottom-bottom-place-date">
+                <div class="place"><p>Housekeeper</p></div>
+                <div class="date"><p>09/02/2024</p></div>
+                </div>
+            </div>
+          </div>
+          
+          <!-- 2nd -->
+
+          <div class="div">
+            <div class="inner-bottom-bottom-profile-picture">
+              <img src="\Images\client-booking-history-pfp\2.png" alt="">
+            </div>
+            <div class="inner-bottom-bottom-profile-description">
+              <div class="inner-bottom-profile-name-stars">
+                <p>Giselle Anne Dimaapi</p>
+                <div class="stars2">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star1">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star2">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star3">
+                  <img src="\Images\star-reviews\No star.png" alt="" class="star5">
+                  <img src="\Images\star-reviews\No star.png" alt="" class="star5">
+                </div>
+              </div>
+                <div class="inner-bottom-bottom-place-date">
+                <div class="place"><p>Laundrywoman</p></div>
+                <div class="date"><p>08/24/2024</p></div>
+                </div>
+            </div>
+          </div>
+
+          <!-- 3rd -->
+          
+          <div class="div">
+            <div class="inner-bottom-bottom-profile-picture">
+              <img src="\Images\client-booking-history-pfp\3.png" alt="">
+            </div>
+            <div class="inner-bottom-bottom-profile-description">
+              <div class="inner-bottom-profile-name-stars">
+                <p>Ningning Tala Mondragon</p>
+                <div class="stars2">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star1">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star2">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star3">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star4">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star4">
+                </div>
+              </div>
+                <div class="inner-bottom-bottom-place-date">
+                <div class="place"><p>Seamstress</p></div>
+                <div class="date"><p>08/15/2024</p></div>
+                </div>
+            </div>
+          </div>
+          
+          <!-- 4th -->
+
+          <div class="div">
+            <div class="inner-bottom-bottom-profile-picture">
+              <img src="\Images\client-booking-history-pfp\4.png" alt="">
+            </div>
+            <div class="inner-bottom-bottom-profile-description">
+              <div class="inner-bottom-profile-name-stars">
+                <p>Isabella Anne Reyes</p>
+                <div class="stars2">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star1">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star2">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star3">
+                  <img src="\Images\star-reviews\Star.png" alt="" class="star4">
+                  <img src="\Images\star-reviews\No star.png" alt="" class="star5">
+                </div>
+              </div>
+                <div class="inner-bottom-bottom-place-date">
+                <div class="place"><p>Tutor</p></div>
+                <div class="date"><p>07/13/2024</p></div>
+                </div>
+            </div>
+          </div>
+          <div class="view-more-button" >
+            <img id="view-more" src="\Images\most-recent-bookings\vm.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("home-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "client-side.html";
+      });
       
-          document.getElementById("home").addEventListener("click", function(event) {
-            event.preventDefault();
-            window.location.href = "client-side.html"; 1 
-          });
-    
-          document.getElementById("booking-history").addEventListener("click", function(event) {
-            event.preventDefault();
-            window.location.href = "client-booking-history.html"; 1 
-          });
-    
-          document.getElementById("account-settings").addEventListener("click", function(event) {
-            event.preventDefault();
-            window.location.href = "client-acc-settings.html"; 1
-          });
-          </script>
+      document.getElementById("home-link-img").addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "client-side.html";
+      });
+      
+      document.getElementById("home-link-text").addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "client-side.html";
+      });
+
+      document.getElementById("logout").addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "/Main-homepage/Homepage.html"; 
+      });
+  
+      document.getElementById("booking-history").addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "client-booking-history.html";
+      });
+
+      document.getElementById("account-settings").addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "client-acc-settings.html";
+      });
+  
+      document.getElementById("view-more").addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "client-booking-history.html";
+      });
+
+      document.getElementById("profile").addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "client-acc-settings.html";
+      });
+
+      document.getElementById("profile-img").addEventListener("click", function(event) {
+        event.preventDefault();
+        window.location.href = "client-acc-settings.html";
+      });
+
+      
+      document.addEventListener("DOMContentLoaded", function() {
+      // All event listeners go here
+      });
+      </script>
   </body>
 </html>
